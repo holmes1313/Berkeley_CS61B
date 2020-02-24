@@ -1,0 +1,118 @@
+
+
+/*
+Every method (aka function) is associated with some class.
+To run a class, we must define a main method.
+	Not all classes have a main method!
+*/
+
+public class Dog {
+	public static void makeNoise() {
+		System.out.println("Bark!");
+	}
+}
+/*
+Can't be run directly since there is no main method.
+*/
+
+
+public class DogLauncher {
+	public static void main(String[] args) {
+		Dog.makeNoise();
+	}
+}
+/* 
+Calls a method from another class. The DogLauncher class will 'test drive' the Dog class. 
+*/
+
+
+// Object Instantiation
+/*
+classes can be instantiated as objects.
+	We'll create a single Dog class, and then create instances of this Dog. These instances are also called objects.
+	The class provides a blueprint that all Dog objects will follow.
+*/	
+public class Dog {
+	/** instance variable*/
+	public int weightInPounds;
+	
+	/** One integer constructor for dogs.*/
+	public Dog(int w) {
+		weightInPounds = w;
+	}
+	
+	/**Non-static method aka instance method.
+	If the method needs to use 'my instance variable', the method shoudl be non-static.*/
+	public void makeNoise() {
+		if (weightInPounds < 10) {
+			System.out.println("yip!");
+		} else if (weightInPounds < 30) {
+			System.out.println("bark!");
+		} else {
+			System.out.println("wooooof!");
+		}
+	}
+}
+
+public class DogLauncher {
+	public static void main(String[] args) {
+		Dog d = new Dog(51);    // decalration, instantiation and assignment
+		d.makeNoise();         // invocation
+	}
+}
+
+
+// Array Instantiation, Arrays of Objects
+/* Create an array of two dogs. */
+Dog[] dogs = new Dog[2];
+dogs[0] = new Dog(8);
+dogs[1] = new Dog(20);
+/* Yipping occurs.*/
+dogs[0].makeNoise();
+
+
+// Class Methods vs. Instance Methods
+/*
+Key differences between static and non-static (aka instance) methods:
+	1.static methods are invoked using the class name, e.g. Dog.makeNoise();
+	2.instance methods are invoked using an instance name, e.g. maya.makeNoise();
+	3. static methods can't access "my" instance variables, because there's no "me".
+
+Some classes are never instantiated. For example, Math.
+x = Math.round(5.6);
+
+Sometimes, classes may have a mix of static and non-static methods.
+1. A variable or method defined in a class is also called a member of that class.
+2. Static members are accessed using class name, e.g. Dog.chineseName
+3. Non-static members cannot be invoked using class name.
+4. Static methods must access instance variables via a specific instance.
+
+*/
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
