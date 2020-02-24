@@ -86,16 +86,43 @@ Sometimes, classes may have a mix of static and non-static methods.
 2. Static members are accessed using class name, e.g. Dog.chineseName
 3. Non-static members cannot be invoked using class name.
 4. Static methods must access instance variables via a specific instance.
-
 */
 
 
+// public static void main(String[] args)
+// command line arguments
+public class ArgsDemo {
+	/** Prints out the 0th command line argument.*/
+	public static void main(String[] args) {
+		System.out.println(args[0]);
+	}
+}
+
+$ java ArgsDemo hello some args
+hello
+
+// Create a program ArgsSum that prints out the sum of the command line arguments, assuming they are numbers.
+public class ArgsSum {
+	public static void main(String[] args) {
+		int sum = 0;
+		for (String n: args) {
+			sum = sum + Integer.parseInt(n);
+		}
+		System.out.println(sum);
+	}
+}
 
 
+// Using Libraries (e.g. StdDraw, ln)
+1. the built-in Java libraries (e.g. Math, String, Integer, List, Map)
+2. the Princeton standard library (e.g. StdDraw, StdAudio, ln)
 
 
-
-
+// Compilation
+// Why make a class file at all?
+1. .class file has been type checked. Distributed code is safer.
+2. .class file are 'simpler' for machine to execute. Distributed code is fater.
+3. Minor benefit: Protects your intellectual property. No need to give out source.
 
 
 
